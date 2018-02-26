@@ -44,7 +44,6 @@ RELAX_USES_LIBRARY_CHECK := true
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(LOCAL_PATH)/overlay/packages/apps/Snap \
     $(LOCAL_PATH)/overlay/packages/apps/CarrierConfig
 
 # Additional native libraries
@@ -111,8 +110,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8937 \
-    Snap
+    camera.msm8937
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.common@1.0 \
