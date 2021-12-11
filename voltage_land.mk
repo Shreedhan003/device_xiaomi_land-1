@@ -35,6 +35,9 @@ PRODUCT_MODEL := Redmi 3S
 # Official-ify
 VOLTAGE_BUILD_TYPE := OFFICIAL
 
+# GrapheneOS Camera
+TARGET_BUILD_GRAPHENEOS_CAMERA = true
+
 # Bootanimation
 TARGET_BOOT_ANIMATION_RES := 1280
 
