@@ -20,8 +20,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
-# Inherit some common Lineage stuff
-$(call inherit-product, vendor/aosp/common.mk)
+# Inherit some common VoltageOS stuff.
+$(call inherit-product, vendor/voltage/config/common_full_phone.mk)
 
 # Inherit from land device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -29,8 +29,11 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := land
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := aosp_land
+PRODUCT_NAME := voltage_land
 PRODUCT_MODEL := Redmi 3S
+
+# Official-ify
+VOLTAGE_BUILD_TYPE := OFFICIAL
 
 # Bootanimation
 TARGET_BOOT_ANIMATION_RES := 1280
@@ -47,12 +50,3 @@ BUILD_FINGERPRINT := Xiaomi/land/land:6.0.1/MMB29M/V10.2.2.0.MALMIXM:user/releas
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
-
-# Set this flag in build script
-ifeq ($(CURRENT_BUILD_TYPE), gapps)
-# Use Gapps
-WITH_CORE_GAPPS := true
-TARGET_SHIPS_SEPERATE_GAPPS_BUILD := true
-TARGET_GAPPS_ARCH := arm64
-IS_PHONE := true
-endif
